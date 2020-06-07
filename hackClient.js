@@ -7353,9 +7353,8 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                 }, window.infoMsg = function(t) {
                     window.sendMsg("#" + t)
                 }, window.zoom = 1.3, window.ultrazoom = 3, window.boolAura = !1, window.typing = !1, window.maxRopeLength = 1e3, window.freeze = !1, window.stopHacks = !1, window.noRope = !1, this.sendChatMessage = function(t, i) {
-                    if ("#" === t[0]);
-                    else if (
-                        t[0]) window.stopHacks ? window.sendMsg("I'm trying to use hacks but i can't") : (e = t.match(/^\/ropehack\s+(on|off)\s*/)) ? "on" == e[1] ? window.boolAura = !0 : "off" == e[1] && (window.boolAura = !1) : (e = t.match(/^\/zoom\s+(.+)/)) ? window.zoom = Number(e[1]) : (e = t.match(/^\/ultrazoom\s+([0-9]+)/)) ? window.ultrazoom = Number(e[1]) : (e = t.match(/^\/rope\s+([0-9]+)/)) ? window.noRope || (window.maxRopeLength = Number(e[1])) : window.infoMsg("Command does not exist");
+                    if ("#" === (t = t.toLowerCase())[0]);
+                    else if ("/" === t[0]) window.stopHacks ? window.sendMsg("I'm trying to use hacks but i can't") : (e = t.match(/^\/ropehack\s+(on|off)\s*/)) ? "on" == e[1] ? window.boolAura = !0 : "off" == e[1] && (window.boolAura = !1) : (e = t.match(/^\/zoom\s+(.+)/)) ? window.zoom = Number(e[1]) : (e = t.match(/^\/ultrazoom\s+([0-9]+)/)) ? window.ultrazoom = Number(e[1]) : (e = t.match(/^\/cameraspeed\s+([0-9]+)/)) ? window.cameraSpeed = Number(e[1]) : (e = t.match(/^\/rope\s+([0-9]+)/)) ? window.noRope || (window.maxRopeLength = Number(e[1])) : window.infoMsg("Command does not exist");
                     else {
                         var n = this.connection.packet(h.Messages.CTS_CHAT);
                         n.u32(~~(4294967296 * Math.random())), n.str(t + "⠀"), n.u8(i), n.send()
