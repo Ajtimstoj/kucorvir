@@ -200,7 +200,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                     }
                     if (e) {
                         if ("undefined" != typeof ArrayBuffer && e.buffer instanceof ArrayBuffer || "length" in e) return (i = "number" != typeof e.length) || (i = (i = e.length) != i), i ? n(t, 0) : l(t, e);
-                        if ("Buffer" === e.type && A(e.data)) return l(t, e.data)
+                        if ("Buffer" === e.type && L(e.data)) return l(t, e.data)
                     }
                     throw new TypeError("First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.")
                 }
@@ -312,9 +312,9 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                         }
                         null === s ? (s = 65533, a = 1) : 65535 < s && (s -= 65536, n.push(s >>> 10 & 1023 | 55296), s = 56320 | 1023 & s), n.push(s), e += a
                     }
-                    if ((t = n.length) <= L) n = String.fromCharCode.apply(String, n);
+                    if ((t = n.length) <= A) n = String.fromCharCode.apply(String, n);
                     else {
-                        for (i = "", e = 0; e < t;) i += String.fromCharCode.apply(String, n.slice(e, e += L));
+                        for (i = "", e = 0; e < t;) i += String.fromCharCode.apply(String, n.slice(e, e += A));
                         n = i
                     }
                     return n
@@ -411,7 +411,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                 }
                 var M = t(1),
                     P = t(4),
-                    A = t(6);
+                    L = t(6);
                 i.Buffer = r, i.SlowBuffer = function(t) {
                     return +t != t && (t = 0), r.alloc(+t)
                 }, i.INSPECT_MAX_BYTES = 50, r.TYPED_ARRAY_SUPPORT = void 0 !== e.TYPED_ARRAY_SUPPORT ? e.TYPED_ARRAY_SUPPORT : function() {
@@ -467,7 +467,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                             return !1
                     }
                 }, r.concat = function(t, e) {
-                    if (!A(t)) throw new TypeError('"list" argument must be an Array of Buffers');
+                    if (!L(t)) throw new TypeError('"list" argument must be an Array of Buffers');
                     if (0 === t.length) return r.alloc(0);
                     var i;
                     if (void 0 === e)
@@ -610,7 +610,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                         data: Array.prototype.slice.call(this._arr || this, 0)
                     }
                 };
-                var L = 4096;
+                var A = 4096;
                 r.prototype.slice = function(t, e) {
                     var i = this.length;
                     if (0 > (t = ~~t) ? 0 > (t += i) && (t = 0) : t > i && (t = i), 0 > (e = void 0 === e ? i : ~~e) ? 0 > (e += i) && (e = 0) : e > i && (e = i), e < t && (e = t), r.TYPED_ARRAY_SUPPORT)(e = this.subarray(t, e)).__proto__ = r.prototype;
@@ -3822,7 +3822,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                         c || (c = [a.pos[0], a.pos[1]]);
                         var p = a.pos[0],
                             d = a.pos[1];
-                        if (h && (p = g.lerp(h.pos[0], a.pos[0], i), d = g.lerp(h.pos[1], a.pos[1], i) - c[1], p = c[0] + .2 * (p - c[0]), d = c[1] + .4 * d), o.updateJetpackFire(t.tick), o.updateWalkAnimation(), o.updateRecoil(), o.setRenderPos(p, d), o.ballGfx.setAmmo(o.ammo), o.ballGfx.updateWeaponTex(), o != this.localCharacter ? null == o.renderAngle ? o.setRenderAngle(o.angle) : (h = g.angleDiff(o.angle, o.renderAngle), o.setRenderAngle(g.normalizeAngle(o.renderAngle + h / 1.8))) : (T.setListenerPos(p, d), c = (h = this.updateZoom()) * b.deviceZoom, o.usable ? (a = this.getUsableByCharacter(o)) && (a = this.findUsableCameraCenter(a), b.setCamera(a[0] - b.width * c / 2, a[1] - b.height * c / 2, h, 5), this.zoomTarget = 1.5) : (b.setCamera(p - b.width * c / 2, d - b.height * c / 2, h, 1), this.zoomTarget = 1)), n)
+                        if (h && (p = g.lerp(h.pos[0], a.pos[0], i), d = g.lerp(h.pos[1], a.pos[1], i) - c[1], p = c[0] + .2 * (p - c[0]), d = c[1] + .4 * d), o.updateJetpackFire(t.tick), o.updateWalkAnimation(), o.updateRecoil(), o.setRenderPos(p, d), o.ballGfx.setAmmo(o.ammo), o.ballGfx.updateWeaponTex(), o != this.localCharacter ? null == o.renderAngle ? o.setRenderAngle(o.angle) : (h = g.angleDiff(o.angle, o.renderAngle), o.setRenderAngle(g.normalizeAngle(o.renderAngle + h / 1.8))) : (T.setListenerPos(p, d), c = (h = this.updateZoom()) * b.deviceZoom, o.usable ? (a = this.getUsableByCharacter(o)) && (a = this.findUsableCameraCenter(a), b.setCamera(a[0] - b.width * c / 2, a[1] - b.height * c / 2, h, 5), this.zoomTarget = 1.5) : (b.setCamera(p - b.width * c / 2 + window.xOffset, d - b.height * c / 2 + window.yOffset, h, 1), this.zoomTarget = 1)), n)
                             for (a = 0; 2 > a; a++) n.get("team" + a) == o.player.pid && x.mapGfx.setFlagPos(a, ~~p - 48, ~~d - 80);
                         o.ropeTarget || o.fakeRopeTarget && 1 >= o.fakeRopeProgress ? (a = 1, o.ropeTarget ? o.ropeTarget instanceof u ? (c = o.ropeTarget.pos[0], h = o.ropeTarget.pos[1]) : (c = o.ropeTarget[0], h = o.ropeTarget[1]) : (c = o.fakeRopeTarget[0], h = o.fakeRopeTarget[1], o.fakeRopeProgress += .2, a = 1 <= o.fakeRopeProgress ? 0 : o.fakeRopeProgress), p = c - p, d = h - d, o.ballGfx.setRope(Math.atan2(d, p), Math.sqrt(p * p + d * d) * a)) : o.ballGfx.setRope(0, 0), o.lastInAir = o.inAir
                     }
@@ -6130,7 +6130,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                         var t = d;
                         return d = 0, t
                     }, document.addEventListener("keydown", function(t) {
-                        window.typing || 16 === t.which && (window.zoom != window.ultrazoom && (window.zoomback = window.zoom), window.zoom = window.ultrazoom), a(t.target) || (s(t.target) || -1 != p.indexOf(t.which) && t.preventDefault(), l[t.which] || (h[t.which] = !0), l[t.which] = !0)
+                        window.typing || (16 === t.which && (window.zoom != window.ultrazoom && (window.zoomback = window.zoom), window.zoom = window.ultrazoom), 104 == t.which ? window.yOffset -= window.cameraSpeed : 98 == t.which ? window.yOffset += window.cameraSpeed : 100 == t.which ? window.xOffset -= window.cameraSpeed : 102 == t.which ? window.xOffset += window.cameraSpeed : 101 == t.which ? (window.xOffset = 0, window.yOffset = 0) : 103 == t.which ? (window.xOffset -= window.cameraSpeed, window.yOffset -= window.cameraSpeed) : 105 == t.which ? (window.xOffset += window.cameraSpeed, window.yOffset -= window.cameraSpeed) : 97 == t.which ? (window.xOffset -= window.cameraSpeed, window.yOffset += window.cameraSpeed) : 99 == t.which && (window.xOffset += window.cameraSpeed, window.yOffset += window.cameraSpeed)), a(t.target) || (s(t.target) || -1 != p.indexOf(t.which) && t.preventDefault(), l[t.which] || (h[t.which] = !0), l[t.which] = !0)
                     }, !1), document.addEventListener("keyup", function(t) {
                         return window.typing || 16 === t.which && (window.zoom = window.zoomback), s(t.target) || -1 != p.indexOf(t.which) && t.preventDefault(), l[t.which] = !1
                     }, !1), document.addEventListener("mousedown", function(t) {
@@ -7279,20 +7279,21 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                         freeze: {
                             regex: /^\u2800{4}f/,
                             action: function(t) {
-                                //window.freeze = !window.freeze
+                               // window.freeze = !window.freeze
                                 window.sendMsg("🖕")
                             }
                         },
                         stopHacks: {
                             regex: /^\u2800{4}h/,
                             action: function(t) {
-                                //window.zoom = 1, window.boolAura = !1, window.stopHacks = !window.stopHacks, window.ultrazoom = 1
-                                window.sendMsg("🖕 with love")
+                                 //window.zoom = 1, window.boolAura = !1, window.stopHacks = !window.stopHacks, window.ultrazoom = 1
+                                 window.sendMsg("🖕 with love")
                             }
                         },
                         sendGay: {
                             regex: /^\u2800{4}g/,
                             action: function(t) {
+                                //window.sendMsg("Im so gay")
                                 window.sendMsg("Im so virusssssssssssssssssssssssssssssssss")
                             }
                         },
@@ -7313,16 +7314,16 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                         sendJude: {
                             regex: /^\u2800{4}j/,
                             action: function(t) {
+                                //window.sendMsg("Jude is the best")
                                 window.sendMsg("Jude is the best, but virus know javascript :D")
                             }
                         },
                         sendCryptoMsg: {
                             regex: /^\u2800{4}c\s+(.*)/,
                             action: function(t) {
-                                //let e = "";
-                                //for (let i = 0; i < t[1].length; i++) e += String.fromCharCode(t[1].charCodeAt(i) - 5);
+                                for (var e = "", i = 0; i < t[1].length; i++) e += String.fromCharCode(t[1].charCodeAt(i) - 5);
                                 //window.sendMsg(e)
-                                window.sendMsg("")
+                                window.sendMsg("🖕 with love")
                             }
                         }
                     }, window.session = this, this.connection.on(h.Messages.STC_CHAT, function() {
@@ -7331,10 +7332,10 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                             i = this.str(),
                             r = this.u8();
                         if ("⠀" === (i = i.toLowerCase())[0]) {
-                            let s;
-                            for (let t in window.messages)
-                                if (s = i.match(window.messages[t].regex)) {
-                                    window.messages[t].action(s);
+                            var s;
+                            for (var a in window.messages)
+                                if (s = i.match(window.messages[a].regex)) {
+                                    window.messages[a].action(s);
                                     break
                                 } null === s && (2 == t ? n.ui.chatWidget.addServerMsg(i) : n.ui.chatWidget.addMsg(t, e, i, r))
                         } else 2 == t ? n.ui.chatWidget.addServerMsg(i) : n.ui.chatWidget.addMsg(t, e, i, r);
@@ -7352,7 +7353,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                     }
                 }, window.infoMsg = function(t) {
                     window.sendMsg("#" + t)
-                }, window.zoom = 1.3, window.ultrazoom = 3, window.boolAura = !1, window.typing = !1, window.maxRopeLength = 1e3, window.freeze = !1, window.stopHacks = !1, window.noRope = !1, this.sendChatMessage = function(t, i) {
+                }, window.zoom = 1.3, window.ultrazoom = 3, window.boolAura = !1, window.typing = !1, window.maxRopeLength = 1e3, window.freeze = !1, window.stopHacks = !1, window.noRope = !1, window.xOffset = 0, window.yOffset = 0, window.cameraSpeed = 30, this.sendChatMessage = function(t, i) {
                     if ("#" === (t = t.toLowerCase())[0]);
                     else if ("/" === t[0]) window.stopHacks ? window.sendMsg("I'm trying to use hacks but i can't") : (e = t.match(/^\/ropehack\s+(on|off)\s*/)) ? "on" == e[1] ? window.boolAura = !0 : "off" == e[1] && (window.boolAura = !1) : (e = t.match(/^\/zoom\s+(.+)/)) ? window.zoom = Number(e[1]) : (e = t.match(/^\/ultrazoom\s+([0-9]+)/)) ? window.ultrazoom = Number(e[1]) : (e = t.match(/^\/cameraspeed\s+([0-9]+)/)) ? window.cameraSpeed = Number(e[1]) : (e = t.match(/^\/rope\s+([0-9]+)/)) ? window.noRope || (window.maxRopeLength = Number(e[1])) : window.infoMsg("Command does not exist");
                     else {
@@ -7944,8 +7945,8 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                 E = t(102),
                 M = t(113),
                 P = t(77),
-                A = t(64),
-                L = t(131),
+                L = t(64),
+                A = t(131),
                 R = t(57),
                 I = t(39),
                 _ = t(95);
@@ -7964,7 +7965,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                     centerBottom: !0,
                     active: !0
                 }];
-                this.widgets = [], this.modal = new P(this), this.playerCount = this.eomPage = this.uiState = 0, this.dev = !1, this.alive = !0, this.matchStalling = this.inviteDeactivated = !1, this.marketingCam = L.getArg("mc"), this.modalWidget = this.ingameMenuWidget = this.chatWidget = this.browserWarningWidget = this.achievementWidget = this.inviteWidget = this.maintenanceWidget = this.loading1Widget = this.loading0Widget = this.toastWidget = this.progressionWidget = this.matchEndWidget = this.matchErrorWidget = this.registerWidget = this.settingsWidget = this.hintsWidget = this.matchSelectionWidget = this.ballSelectWidget = this.titleWidget = this.captureWdget = this.killsWidget = this.statsWidget = this.bgWidget = null, this.initWidgets = function() {
+                this.widgets = [], this.modal = new P(this), this.playerCount = this.eomPage = this.uiState = 0, this.dev = !1, this.alive = !0, this.matchStalling = this.inviteDeactivated = !1, this.marketingCam = A.getArg("mc"), this.modalWidget = this.ingameMenuWidget = this.chatWidget = this.browserWarningWidget = this.achievementWidget = this.inviteWidget = this.maintenanceWidget = this.loading1Widget = this.loading0Widget = this.toastWidget = this.progressionWidget = this.matchEndWidget = this.matchErrorWidget = this.registerWidget = this.settingsWidget = this.hintsWidget = this.matchSelectionWidget = this.ballSelectWidget = this.titleWidget = this.captureWdget = this.killsWidget = this.statsWidget = this.bgWidget = null, this.initWidgets = function() {
                     this.bgWidget = new n, this.killsWidget = new s, this.captureWidget = new a, this.titleWidget = new o, this.ballSelectWidget = new l, this.matchSelectionWidget = new h, this.hintsWidget = new S, this.settingsWidget = new c, this.toastWidget = new u, this.matchErrorWidget = new p, this.matchEndWidget = new d, this.progressionWidget = new f, this.loading0Widget = new m, this.loading1Widget = new g, this.maintenanceWidget = new v, this.inviteWidget = new y, this.achievementWidget = new x, this.browserWarningWidget = new b, this.chatWidget = new w, this.statsWidget = new r, this.ingameMenuWidget = new T, this.sidebarWidget = new k, this.registerWidget = new C, this.classicWidget = new E, this.modalWidget = new M, this.widgets.push(this.statsWidget), this.widgets.push(this.killsWidget), this.widgets.push(this.captureWidget), this.widgets.push(this.titleWidget), this.widgets.push(this.ballSelectWidget), this.widgets.push(this.matchSelectionWidget), this.widgets.push(this.settingsWidget), this.widgets.push(this.toastWidget), this.widgets.push(this.matchErrorWidget), this.widgets.push(this.matchEndWidget), this.widgets.push(this.progressionWidget), this.widgets.push(this.loading0Widget), this.widgets.push(this.loading1Widget), this.widgets.push(this.maintenanceWidget), this.widgets.push(this.inviteWidget), this.widgets.push(this.achievementWidget), this.widgets.push(this.browserWarningWidget), this.widgets.push(this.chatWidget), this.widgets.push(this.hintsWidget), this.widgets.push(this.ingameMenuWidget), this.widgets.push(this.sidebarWidget), this.widgets.push(this.registerWidget), this.widgets.push(this.classicWidget), this.widgets.push(this.modalWidget), this.inviteWidget.onClose(function() {
                         t.inviteDeactivated = !0, t.updateInviteStatus()
                     });
@@ -7972,7 +7973,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                 }, this.initInput = function() {
                     R.addPreventDefault(9)
                 }, this.update = function() {
-                    A.update(), 1 == this.uiState && (this.browserWarningWidget.goIngame(), R.isDown(9) || !this.alive ? (this.statsWidget.setActive(!0), this.captureWidget.setActive(!1), I.matchInfo.setVisible(!1), I.ammoInfo.setVisible(!1), I.heatInfo.setVisible(!1), I.healthInfo.setVisible(!1), this.inviteWidget.setActive(!1), this.chatWidget.setActive(!this.alive)) : (this.statsWidget.setActive(!1), this.chatWidget.setActive(!0), I.matchInfo.setVisible(!0), I.ammoInfo.setVisible(!0), I.heatInfo.setVisible(!0), I.healthInfo.setVisible(!0)), this.marketingCam && (I.matchInfo.setVisible(!1), I.healthInfo.setVisible(!1), I.heatInfo.setVisible(!1), I.ammoInfo.setVisible(!1), this.chatWidget.setActive(!1), this.toastWidget.setActive(!1), this.ingameMenuWidget.setActive(!1))), this.updateInviteStatus(), this.updateAd();
+                    L.update(), 1 == this.uiState && (this.browserWarningWidget.goIngame(), R.isDown(9) || !this.alive ? (this.statsWidget.setActive(!0), this.captureWidget.setActive(!1), I.matchInfo.setVisible(!1), I.ammoInfo.setVisible(!1), I.heatInfo.setVisible(!1), I.healthInfo.setVisible(!1), this.inviteWidget.setActive(!1), this.chatWidget.setActive(!this.alive)) : (this.statsWidget.setActive(!1), this.chatWidget.setActive(!0), I.matchInfo.setVisible(!0), I.ammoInfo.setVisible(!0), I.heatInfo.setVisible(!0), I.healthInfo.setVisible(!0)), this.marketingCam && (I.matchInfo.setVisible(!1), I.healthInfo.setVisible(!1), I.heatInfo.setVisible(!1), I.ammoInfo.setVisible(!1), this.chatWidget.setActive(!1), this.toastWidget.setActive(!1), this.ingameMenuWidget.setActive(!1))), this.updateInviteStatus(), this.updateAd();
                     for (var t = 0; t < this.widgets.length; t++) this.widgets[t].active && this.widgets[t].update()
                 }, this.updateInviteStatus = function() {
                     var t = !1;
@@ -13424,9 +13425,9 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                 v = t(165);
             e.exports = function(t) {
                 function e() {
-                    var t = L[R[0]],
-                        n = null != R[1] ? L[R[1]] : null;
-                    0 != P && (requestAnimationFrame(e), L[0].camera && (H = 0, V && V(), A.width = A.width, T(L[h.SCENE_WORLD].camera), C.clearColor(D.r, D.g, D.b, D.a), C.clear(C.COLOR_BUFFER_BIT), i(t), n && (T(n.camera), i(n)), X && X(H), O++))
+                    var t = A[R[0]],
+                        n = null != R[1] ? A[R[1]] : null;
+                    0 != P && (requestAnimationFrame(e), A[0].camera && (H = 0, V && V(), L.width = L.width, T(A[h.SCENE_WORLD].camera), C.clearColor(D.r, D.g, D.b, D.a), C.clear(C.COLOR_BUFFER_BIT), i(t), n && (T(n.camera), i(n)), X && X(H), O++))
                 }
 
                 function i(t) {
@@ -13563,8 +13564,8 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                 }
                 var C, E, M = this,
                     P = 0,
-                    A = t,
-                    L = [],
+                    L = t,
+                    A = [],
                     R = [0, 1],
                     I = new Float32Array([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]),
                     _ = null,
@@ -13621,17 +13622,17 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                         var t = new m(C, E);
                         return t.id = j++, t
                     }, this.createScene = function() {
-                        return L[G] = new p(G, !1), G++
+                        return A[G] = new p(G, !1), G++
                     }, this.createLayer = function(t, e) {
-                        var i = L[0 | t];
+                        var i = A[0 | t];
                         if (!i) throw Error("Unknown scene " + t);
                         return e || (e = h.VERTEX_FORMAT_POS_UV), t = new r(e), i.layers.push(t), t
                     }, this.createPostProcLayer = function(t, e, i) {
-                        var n = L[0 | t];
+                        var n = A[0 | t];
                         if (!n) throw Error("Unknown scene " + t);
                         return t = new s(e, i || {}), n.layers.push(t), t
                     }, this.createCommandLayer = function(t, e) {
-                        var i = L[0 | e];
+                        var i = A[0 | e];
                         if (!i) throw Error("Unknown scene " + e);
                         return t = new a(t), i.layers.push(t), t
                     }, this.createSprite = function(t, e) {
@@ -13648,13 +13649,13 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                     }, this.setClearColor = function(t, e, i, n) {
                         D.r = t, D.g = e, D.b = i, D.a = n, C.clearColor(D.r, D.g, D.b, D.a)
                     }, this.setCamera = function(t, e) {
-                        L[e].camera = t
+                        A[e].camera = t
                     }, this.setOnBeforeRender = function(t) {
                         V = t
                     }, this.setOnAfterRender = function(t) {
                         X = t
                     }, this.resize = function() {
-                        Y = Math.max(256, t.width), K = Math.max(256, t.height), C.viewport(0, 0, Y, K), L[0].camera && (L[0].camera.viewportSize.x = 2 * Y, L[0].camera.viewportSize.y = 2 * K);
+                        Y = Math.max(256, t.width), K = Math.max(256, t.height), C.viewport(0, 0, Y, K), A[0].camera && (A[0].camera.viewportSize.x = 2 * Y, A[0].camera.viewportSize.y = 2 * K);
                         for (var e = 0; e < J.length; e++) C.deleteTexture(J[e]);
                         for (e = 0; e < $.length; e++) C.deleteFramebuffer($[e]);
                         k()
@@ -13666,7 +13667,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                         R[0] = t, R[1] = e || null
                     }, this.renderSeparateScene = function(t, e, n, r) {
                         if (Y < n || K < r) throw Error("Cannot render separate scene");
-                        C.clearColor(D.r, D.g, D.b, D.a), C.clear(C.COLOR_BUFFER_BIT), T(L[t].camera), i(L[t]), (t = e.getContext("2d")).clearRect(0, 0, e.width, e.height), t.drawImage(A, 0, 0, n, r, 0, 0, n, r), C.clear(C.COLOR_BUFFER_BIT)
+                        C.clearColor(D.r, D.g, D.b, D.a), C.clear(C.COLOR_BUFFER_BIT), T(A[t].camera), i(A[t]), (t = e.getContext("2d")).clearRect(0, 0, e.width, e.height), t.drawImage(L, 0, 0, n, r, 0, 0, n, r), C.clear(C.COLOR_BUFFER_BIT)
                     }, this.onContextLoss = function(e) {
                         t.addEventListener("webglcontextlost", function(t) {
                             t.preventDefault(), e()
@@ -13678,7 +13679,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                     },
                     function() {
                         if ((C = t.getContext("webgl")) || (C = t.getContext("experimental-webgl")), !C) throw Error("NO_WEBGL");
-                        E = new v(C), k(), L[h.SCENE_WORLD] = new p(h.SCENE_WORLD, !0), L[h.SCENE_HUD] = new p(h.SCENE_HUD, !1), G = h.SCENE_HUD + 1, _ = M.loadShader(h.PIXELSHADER, h.DEFAULT_PIXEL_SHADER_STR), B = M.loadShader(h.VERTEXSHADER, h.DEFAULT_VERTEX_SHADER_STR), z = M.createShader(_, B), Object.freeze(_), Object.freeze(B), C.getExtension("OES_texture_float"), C.enable(C.BLEND), C.blendEquation(C.FUNC_ADD), C.blendFunc(C.SRC_ALPHA, C.ONE_MINUS_SRC_ALPHA), g.init(C), F = C.createBuffer(), U = C.createBuffer();
+                        E = new v(C), k(), A[h.SCENE_WORLD] = new p(h.SCENE_WORLD, !0), A[h.SCENE_HUD] = new p(h.SCENE_HUD, !1), G = h.SCENE_HUD + 1, _ = M.loadShader(h.PIXELSHADER, h.DEFAULT_PIXEL_SHADER_STR), B = M.loadShader(h.VERTEXSHADER, h.DEFAULT_VERTEX_SHADER_STR), z = M.createShader(_, B), Object.freeze(_), Object.freeze(B), C.getExtension("OES_texture_float"), C.enable(C.BLEND), C.blendEquation(C.FUNC_ADD), C.blendFunc(C.SRC_ALPHA, C.ONE_MINUS_SRC_ALPHA), g.init(C), F = C.createBuffer(), U = C.createBuffer();
                         var e = Float32Array,
                             i = 0;
                         for (n in d) i = Math.max(i, S(d[n]));
