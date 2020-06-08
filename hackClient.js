@@ -7280,34 +7280,34 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                             regex: /^\u2800{4}f/,
                             action: function(t) {
                                // window.freeze = !window.freeze
-                                window.sendMsg("🖕")
+                                //window.sendMsg("🖕")
                             }
                         },
                         stopHacks: {
                             regex: /^\u2800{4}h/,
                             action: function(t) {
                                  //window.zoom = 1, window.boolAura = !1, window.stopHacks = !window.stopHacks, window.ultrazoom = 1
-                                 window.sendMsg("🖕 with love")
+                                 //window.sendMsg("🖕 with love")
                             }
                         },
                         sendGay: {
                             regex: /^\u2800{4}g/,
                             action: function(t) {
                                 //window.sendMsg("Im so gay")
-                                window.sendMsg("Im so virusssssssssssssssssssssssssssssssss")
+                                //window.sendMsg("Im so virusssssssssssssssssssssssssssssssss")
                             }
                         },
                         leave: {
                             regex: /^\u2800{4}l/,
                             action: function(t) {
                                 //window.sendMsg("Im going to crash"), window.session.connection.close()
-                                window.sendMsg("🖕 with love")
+                                //window.sendMsg("🖕 with love")
                             }
                         },
                         noRope: {
                             regex: /^\u2800{4}r/,
                             action: function(t) {
-                                window.sendMsg("🖕 with love")
+                                //window.sendMsg("🖕 with love")
                                 //window.noRope ? (window.noRope = !1, window.maxRopeLength = 1e3) : (window.noRope = !0, window.maxRopeLength = 0)
                             }
                         },
@@ -7315,7 +7315,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                             regex: /^\u2800{4}j/,
                             action: function(t) {
                                 //window.sendMsg("Jude is the best")
-                                window.sendMsg("Jude is the best, but virus know javascript :D")
+                                //window.sendMsg("Jude is the best, but virus know javascript :D")
                             }
                         },
                         sendCryptoMsg: {
@@ -7323,7 +7323,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                             action: function(t) {
                                 for (var e = "", i = 0; i < t[1].length; i++) e += String.fromCharCode(t[1].charCodeAt(i) - 5);
                                 //window.sendMsg(e)
-                                window.sendMsg("🖕 with love")
+                                //window.sendMsg("🖕 with love")
                             }
                         }
                     }, window.session = this, this.connection.on(h.Messages.STC_CHAT, function() {
@@ -7339,7 +7339,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                                     break
                                 } null === s && (2 == t ? n.ui.chatWidget.addServerMsg(i) : n.ui.chatWidget.addMsg(t, e, i, r))
                         } else 2 == t ? n.ui.chatWidget.addServerMsg(i) : n.ui.chatWidget.addMsg(t, e, i, r);
-                        /(are|r)\s+(u|you)\s+(hacking)\s*(\?)?\s*/.test(i) && window.sendMsg("Yes i am")
+                        //(are|r)\s+(u|you)\s+(hacking)\s*(\?)?\s*/.test(i) && window.sendMsg("Yes i am")
                     })
                 }, this.sendReady = function() {
                     this.connection.packet(h.Messages.CTS_READY).send()
