@@ -5085,7 +5085,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
         }, {}],
         42: [function(t, e, i) {
             function n() {
-                this.dataHealthCurrent = 0, this.dataHealthMax = 10, this.colors = {
+                this.dataHealthCurrent = 0, this.dataHealthMax = 10000, this.colors = {
                     strokeBg: "rgba(0, 0, 0, 0.0)",
                     fillBg: "rgba(0, 0, 0, 0.5)",
                     highlightBg: "rgba(110, 0, 0, 0.5)",
