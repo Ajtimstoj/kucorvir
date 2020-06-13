@@ -3849,7 +3849,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                     }
                     e = l[t];
                     var i = o[e.bullet];
-                    i = i.texHud || i.tex, w.healthInfo.setHealth(this.localCharacter.health, r.maxHealth), w.ammoInfo.setAmmo(this.localCharacter.ammo, e.ammoCount, i, t), this.localCharacter.usable ? w.heatInfo.setHeat(this.currentUsable.heat) : w.heatInfo.setHeat(0)
+                    i = i.texHud || i.tex, w.healthInfo.setHealth(100, r.maxHealth), w.ammoInfo.setAmmo(this.localCharacter.ammo, e.ammoCount, i, t), this.localCharacter.usable ? w.heatInfo.setHeat(this.currentUsable.heat) : w.heatInfo.setHeat(0)
                 }
                 x.ui.setAlive(null != this.localCharacter), x.ui.setPlayerCount(this.gameState.getSheets("player").length), null != this.localCharacter && s.hide(), t = ~~((this.session.matchLength - this.tick) / r.ticksPerSecond), e = this.gameState.findSheet("match"), w.matchInfo.setWarmup(e.get("warmup")), w.matchInfo.setTimeLeft(t), x.ui.statsWidget.setRemainingSeconds(t)
             }, n.prototype.updateTileGrid = function() {
