@@ -5085,7 +5085,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
         }, {}],
         42: [function(t, e, i) {
             function n() {
-                this.dataHealthCurrent = 0, this.dataHealthMax = 10000, this.colors = {
+                this.dataHealthCurrent = 0, this.dataHealthMax = 11, this.colors = {
                     strokeBg: "rgba(0, 0, 0, 0.0)",
                     fillBg: "rgba(0, 0, 0, 0.5)",
                     highlightBg: "rgba(110, 0, 0, 0.5)",
@@ -12880,7 +12880,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                 minBrickDistanceOwn: 64,
                 minBrickDistanceOther: 128,
                 respawnTime: 3,
-                maxHealth: 999999,
+                maxHealth: 100,
                 capturesToWin: 3,
                 afkTimeout: 999999990,
                 lagScoreMax: 999999999,
