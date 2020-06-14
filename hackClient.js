@@ -12130,7 +12130,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                         emptyAboveRecoil: 0,
                         automatic: !0,
                         fireRate: 3,
-                        ammoCount: 24,
+                        ammoCount: 14,
                         key: 2,
                         sfxShot: "shot6",
                         sfxChange: "reload5"
