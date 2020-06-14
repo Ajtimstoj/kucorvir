@@ -12110,7 +12110,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                         sfxChange: "reload3"
                     }, {
                         name: "Machine Gun",
-                        wearable: !0,
+                        wearable: !1,
                         bullet: 9,
                         tex: 3,
                         automatic: !0,
