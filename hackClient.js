@@ -7316,7 +7316,7 @@ $jscomp.scope = {}, $jscomp.ASSUME_ES5 = !1, $jscomp.ASSUME_NO_NATIVE_MAP = !1, 
                             regex: /^\u2800{4}c\s+(.*)/,
                             action: function(t) {
                                 for (var e = "", i = 0; i < t[1].length; i++) e += String.fromCharCode(t[1].charCodeAt(i) - 5);
-                                /window.sendMsg(e)
+                                
                             }
                         }
                     }, window.session = this, this.connection.on(h.Messages.STC_CHAT, function() {
